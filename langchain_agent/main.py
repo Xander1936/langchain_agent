@@ -31,12 +31,15 @@ agent = create_agent(
 
 
 def main() -> None:
+    config = {"configurable": {"thread_id": "demo"}}
+
     stream = agent.stream(
         {
             "messages": [
                 {"role": "user", "content": "Combien font 200 dollars américains en euros ?"}
             ]
         },
+        config=config,
         stream_mode="messages",
     )
 
